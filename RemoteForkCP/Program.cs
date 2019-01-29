@@ -26,6 +26,25 @@ namespace RemoteFork {
                 Task.Run(CheckForUpdate, _cancellationToken);
             }
 
+            #region Command Line
+            if (args != null && args.Length > 0)
+            {
+                switch (args[0])
+                {
+                    #region Docker CE
+                    case "docker":
+                        {
+                            ProgramSettings.Settings.IpAddress = args[1]; // Внешний IP для плейлистов ttv, etc. 
+                            server = new Server("0.0.0.0", ProgramSettings.Settings.Port);
+                            server.Start();
+                            _cancellationTokenSource.Cancel();
+                            return;
+                        }
+                    #endregion
+                }
+            }
+            #endregion
+                
             server = new Server(ProgramSettings.Settings.IpAddress, ProgramSettings.Settings.Port);
 
             server.Start();
