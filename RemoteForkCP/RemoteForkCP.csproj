@@ -18,6 +18,7 @@
     <RepositoryUrl>https://github.com/ShutovPS/RemoteFork</RepositoryUrl>
     <PackageLicenseUrl>https://github.com/ShutovPS/RemoteFork/blob/master/LICENSE</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <ServerGarbageCollection>false</ServerGarbageCollection>
     <Copyright />
   </PropertyGroup>
 
